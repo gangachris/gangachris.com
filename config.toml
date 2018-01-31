@@ -1,3 +1,43 @@
-baseURL = "http://example.org/"
+baseURL = "https://gangachris.com/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "NIH isn't a 4 letter word"
+theme = "kiss"
+copyright = "&copy; <a href=\"https://github.com/gangachris\">Christopher Ganga</a> 2018"
+discussShortname = "ganga"
+googleAnalytics = ""
+# Number of posts per page
+Paginate = 5
+enableRobotsTXT = true
+
+[params.assets]
+customCSS = ["css/custom.css"]
+
+[params.info]
+adsense = "" # Adsense ID (ID only, without ca-pub-)
+enableSocial = true # Adds OpenGraph and Twitter cards
+homeTitle = "" # Title for home page
+poweredby = true # Adds powered by hugo and kiss below Copyright
+
+# [params.opengraph.facebook]
+# admins = [] # array of Facebook IDs
+# appID = ""
+# pageID = ""
+
+# [params.opengraph.twitter]
+# page = "" # Twitter Page username. If not set, params.social.twitter will be used.
+
+[params.social]
+
+twitter = "gangachris_"
+github = "gangachris"
+email = "ganga.chris@gmail.com"
+linkedin = "gangachris"
+# facebook = "ribice"
+# instagram = ""
+# codepen = ""
+
+# [taxonomies]
+# tag ="tags"
+
+# [blackfriday]
+# hrefTargetBlank = true
