@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "NIH isn't a 4 letter word"
 theme = "kiss"
 copyright = "&copy; <a href=\"https://github.com/gangachris\">Christopher Ganga</a> 2018"
-discussShortname = "ganga"
+discussShortname = "gangac"
 googleAnalytics = ""
 # Number of posts per page
 Paginate = 5
