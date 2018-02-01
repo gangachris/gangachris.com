@@ -1,43 +1,42 @@
-baseURL = "https://gangachris.com"
-languageCode = "en-us"
+baseurl = "https://gangachris.com"
+languageCode = "en"
 title = "NIH isn't a 4 letter word"
-theme = "kiss"
-copyright = "&copy; <a href=\"https://github.com/gangachris\">Christopher Ganga</a> 2018"
-discussShortname = "gangac"
+theme = "hemingway"
+copyright = "&copy; <a href=\"https://github.com/gangachris\">gangachris</a> 2018"
+disqusShortname = "gangac"
 googleAnalytics = ""
-# Number of posts per page
-Paginate = 5
-enableRobotsTXT = true
 
-[params.assets]
-customCSS = ["css/custom.css"]
+#code
+# pygmentsUseClassic=true
+pygmentsCodefences=true
+pygmentsStyle = "vs"
 
-[params.info]
-adsense = "" # Adsense ID (ID only, without ca-pub-)
-enableSocial = true # Adds OpenGraph and Twitter cards
-homeTitle = "" # Title for home page
-poweredby = true # Adds powered by hugo and kiss below Copyright
+[params]
 
-# [params.opengraph.facebook]
-# admins = [] # array of Facebook IDs
-# appID = ""
-# pageID = ""
+# [params.highlight]
+# style = "github"
+# languages = ["go", "dockerfile", "html", "yaml", "typescript"]
 
-# [params.opengraph.twitter]
-# page = "" # Twitter Page username. If not set, params.social.twitter will be used.
+[[params.social]]
+url = "https://github.com/gangachris"
+fa_icon = "fa-github"
 
-[params.social]
+[[params.social]]
+url = "https://twitter.com/gangachris_"
+fa_icon = "fa-twitter"
 
-twitter = "gangachris_"
-github = "gangachris"
-email = "ganga.chris@gmail.com"
-linkedin = "gangachris"
-# facebook = "ribice"
-# instagram = ""
-# codepen = ""
+[[params.social]]
+url = "https://www.linkedin.com/in/gangachris/"
+fa_icon = "fa-linkedin"
 
-# [taxonomies]
-# tag ="tags"
+[[params.social]]
+url = "mailto:ganga.chris@gmail.com"
+fa_icon = "fa-envelope"
 
-# [blackfriday]
-# hrefTargetBlank = true
+# [[params.social]]
+# url = "https://telegram.me/gangachris"
+# fa_icon = "fa-telegram-plane"
+
+[[params.social]]
+url = "/index.xml"
+fa_icon = "fa-rss"
