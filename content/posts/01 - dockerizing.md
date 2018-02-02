@@ -1,5 +1,6 @@
 ---
 title: "Dockerizing My Dev Workflow"
+slug: "dockerizing-my-dev-workflow"
 date: 2016-07-10T16:37:03+03:00
 draft: false
 ---

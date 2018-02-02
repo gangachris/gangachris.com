@@ -1,5 +1,6 @@
 ---
 title: "Tinkering with Philips Hue Lights"
+slug: "tinkering-with-philips-hue-lights"
 date: 2017-11-01T17:08:09+03:00
 draft: false
 ---

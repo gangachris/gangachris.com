@@ -1,5 +1,6 @@
 ---
 title: "Quicker Angular Forms Validation"
+slug: "quicker-angular-forms-validation"
 date: 2017-01-01T16:53:41+03:00
 draft: false
 ---
