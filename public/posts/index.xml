@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on NIH isn&#39;t a 4 letter word</title>
+    <link>https://gangachris.com/posts/</link>
+    <description>Recent content in Posts on NIH isn&#39;t a 4 letter word</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/gangachris&#34;&gt;gangachris&lt;/a&gt; 2018</copyright>
+    <lastBuildDate>Wed, 31 Jan 2018 16:15:38 +0300</lastBuildDate>
+    
+	<atom:link href="https://gangachris.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Moving to Hugo</title>
+      <link>https://gangachris.com/posts/moving-to-hugo/</link>
+      <pubDate>Wed, 31 Jan 2018 16:15:38 +0300</pubDate>
+      
+      <guid>https://gangachris.com/posts/moving-to-hugo/</guid>
+      <description>This is the first post of this blog. Not much here, just moving from medium publications to hugo. Honestly, I just have like 3 posts there which are all before this intro. Let&amp;rsquo;s see how this goes&amp;hellip;
+I&amp;rsquo;ve also contributed a bit at Scotch.io
+A little something from one of my favorite speakers, Peter Bourgon on one of his talks Evolutionary Optimization with Go
+ NIH (Not Invented Here) isn&amp;rsquo;t a 4-letter word.</description>
+    </item>
+    
+    <item>
+      <title>Tinkering with Philips Hue Lights</title>
+      <link>https://gangachris.com/posts/tinkering-with-philips-hue-lights/</link>
+      <pubDate>Wed, 01 Nov 2017 17:08:09 +0300</pubDate>
+      
+      <guid>https://gangachris.com/posts/tinkering-with-philips-hue-lights/</guid>
+      <description>I’m a developer by day, and mostly curious the rest of the time. I recently got the Philips Hue Starter Kit 3rd Generation (See Review Here), got the Hue Disco app, and raved on my own before I was quickly bored. So I decided to see how else I could use the bulbs.
+Can I change the color on my own… 🤔 Turns out, there’s extensive APIs and SDKS for the Hue Lights.</description>
+    </item>
+    
+    <item>
+      <title>Quicker Angular Forms Validation</title>
+      <link>https://gangachris.com/posts/quicker-angular-forms-validation/</link>
+      <pubDate>Sun, 01 Jan 2017 16:53:41 +0300</pubDate>
+      
+      <guid>https://gangachris.com/posts/quicker-angular-forms-validation/</guid>
+      <description>The community is moving away from calling Angular by version names, Angular 2, Angular 4 and the likes. It’s now just Angular, mainly because of the clear 6 months release cycles recently mentioned.
+So in light of this, I updated my Open Source Project, angular validators, to ng-validators. I was surprised that name was available, because there are a couple of validators out there, you can pick whichever you want.</description>
+    </item>
+    
+    <item>
+      <title>Dockerizing My Dev Workflow</title>
+      <link>https://gangachris.com/posts/dockerizing-my-dev-workflow/</link>
+      <pubDate>Sun, 10 Jul 2016 16:37:03 +0300</pubDate>
+      
+      <guid>https://gangachris.com/posts/dockerizing-my-dev-workflow/</guid>
+      <description>I’ve always just read about docker, for almost a year now, and recently decided to move all my development workflow to docker. I’ll briefly write about how I did this for two of the recent projects I’ve been working on, a mean stack application, and a Laravel-Postgres application.
+I’m set up on a mac, and since docker is not natively supported on mac and Windows unless you have Virtual Box installed, I joined the docker beta program.</description>
+    </item>
+    
+  </channel>
+</rss>

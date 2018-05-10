@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scotch on NIH isn&#39;t a 4 letter word</title>
+    <link>https://gangachris.com/tags/scotch/</link>
+    <description>Recent content in Scotch on NIH isn&#39;t a 4 letter word</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/gangachris&#34;&gt;gangachris&lt;/a&gt; 2018</copyright>
+    <lastBuildDate>Wed, 31 Jan 2018 16:15:38 +0300</lastBuildDate>
+    
+	<atom:link href="https://gangachris.com/tags/scotch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Moving to Hugo</title>
+      <link>https://gangachris.com/posts/moving-to-hugo/</link>
+      <pubDate>Wed, 31 Jan 2018 16:15:38 +0300</pubDate>
+      
+      <guid>https://gangachris.com/posts/moving-to-hugo/</guid>
+      <description>This is the first post of this blog. Not much here, just moving from medium publications to hugo. Honestly, I just have like 3 posts there which are all before this intro. Let&amp;rsquo;s see how this goes&amp;hellip;
+I&amp;rsquo;ve also contributed a bit at Scotch.io
+A little something from one of my favorite speakers, Peter Bourgon on one of his talks Evolutionary Optimization with Go
+ NIH (Not Invented Here) isn&amp;rsquo;t a 4-letter word.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tinkering with Philips Hue Lights | NIH isn&#39;t a 4 letter word</title>
+<link rel="stylesheet" href="https://gangachris.com/css/style.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://gangachris.com"><h1 class="title is-4">NIH isn&#39;t a 4 letter word</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/gangachris">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/gangachris_">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.linkedin.com/in/gangachris/">
+            <span class="icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="mailto:ganga.chris@gmail.com">
+            <span class="icon">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">November 1, 2017</h2>
+    <h1 class="title">Tinkering with Philips Hue Lights</h1>
+    <div class="content">
+      
+
+<p>I’m a developer by day, and mostly curious the rest of the time. I recently got the Philips Hue Starter Kit 3rd Generation (<a href="https://www.youtube.com/watch?v=DQYXJXybK9U">See Review Here</a>), got the <a href="https://www.youtube.com/watch?v=WjXzdmjPMhU">Hue Disco app</a>, and raved on my own before I was quickly bored. So I decided to see how else I could use the bulbs.</p>
+
+<h2 id="can-i-change-the-color-on-my-own">Can I change the color on my own… 🤔</h2>
+
+<p>Turns out, there’s <a href="https://www.developers.meethue.com/tools-and-sdks">extensive APIs and SDKS</a> for the Hue Lights.</p>
+
+<p>So I quickly schemed through the Getting Started guide. Grabbed a Go SDK, and tried to cycle through the three colors I wanted (RED, GREEN, BLUE), too original.</p>
+
+<p>Note that the code below assumes you’ve gotten a username and linked the hue bridge from following <a href="https://developers.meethue.com/documentation/getting-started">this guide</a>. This changes the color of the Hue Bulbs every 2 seconds. (Test case was done with one connected bulb)</p>
+
+<h4 id="hue-go">hue.go</h4>
+
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00f">package</span> main
+
+<span style="color:#00f">import</span> (
+	<span style="color:#a31515">&#34;time&#34;</span>
+
+	hue <span style="color:#a31515">&#34;github.com/collinux/gohue&#34;</span>
+)
+
+<span style="color:#00f">const</span> (
+	username = <span style="color:#a31515">&#34;&lt;your-username&gt;&#34;</span>
+)
+
+<span style="color:#00f">func</span> main() {
+	bridges, _ := hue.FindBridges()
+	bridge := bridges[0]
+	bridge.Login(username)
+
+	lights, _ := bridge.GetAllLights()
+	<span style="color:#00f">for</span> _, light := <span style="color:#00f">range</span> lights {
+		light.SetBrightness(50)
+
+		light.SetColor(hue.RED)
+		time.Sleep(2 * time.Second)
+
+		light.SetColor(hue.YELLOW)
+		time.Sleep(2 * time.Second)
+
+		light.SetColor(hue.GREEN)
+	}
+}</code></pre></div>
+
+<h2 id="http-endpoint">HTTP Endpoint</h2>
+
+<p>I decided to build a tiny Go server which would sit and accept http requests, and change the lights accordingly.
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00f">package</span> main
+
+<span style="color:#00f">import</span> (
+	<span style="color:#a31515">&#34;fmt&#34;</span>
+	<span style="color:#a31515">&#34;net/http&#34;</span>
+
+	hue <span style="color:#a31515">&#34;github.com/collinux/gohue&#34;</span>
+	<span style="color:#a31515">&#34;github.com/fatih/color&#34;</span>
+)
+
+<span style="color:#00f">const</span> (
+	username   = <span style="color:#a31515">&#34;&lt;username&gt;&#34;</span>
+	brightness = 50
+)
+
+<span style="color:#00f">func</span> main() {
+	bridges, _ := hue.FindBridges()
+	bridge := bridges[0]
+	bridge.Login(username)
+
+	lights, err := bridge.GetAllLights()
+	<span style="color:#00f">if</span> err != <span style="color:#00f">nil</span> {
+		<span style="color:#008000">// go get github.com/fatih/color
+</span><span style="color:#008000"></span>		<span style="color:#008000">// Fatih&#39;s color lib helps with colorful stdout
+</span><span style="color:#008000"></span>		color.Red(err.Error())
+	}
+
+	http.HandleFunc(<span style="color:#a31515">&#34;/red&#34;</span>, redHandler(lights))
+	http.HandleFunc(<span style="color:#a31515">&#34;/green&#34;</span>, greenHandler(lights))
+	http.HandleFunc(<span style="color:#a31515">&#34;/blue&#34;</span>, blueHandler(lights))
+	http.ListenAndServe(<span style="color:#a31515">&#34;:8080&#34;</span>, <span style="color:#00f">nil</span>)
+}
+
+<span style="color:#00f">func</span> redHandler(lights []hue.Light) http.HandlerFunc {
+	<span style="color:#00f">return</span> <span style="color:#00f">func</span>(w http.ResponseWriter, r *http.Request) {
+		changeHueBulbsColor(lights, hue.RED)
+		fmt.Fprintf(w, <span style="color:#a31515">&#34;red&#34;</span>)
+	}
+}
+
+<span style="color:#00f">func</span> greenHandler(lights []hue.Light) http.HandlerFunc {
+	<span style="color:#00f">return</span> <span style="color:#00f">func</span>(w http.ResponseWriter, r *http.Request) {
+		changeHueBulbsColor(lights, hue.GREEN)
+		fmt.Fprintf(w, <span style="color:#a31515">&#34;green&#34;</span>)
+	}
+}
+
+<span style="color:#00f">func</span> blueHandler(lights []hue.Light) http.HandlerFunc {
+	<span style="color:#00f">return</span> <span style="color:#00f">func</span>(w http.ResponseWriter, r *http.Request) {
+		changeHueBulbsColor(lights, hue.BLUE)
+		fmt.Fprintf(w, <span style="color:#a31515">&#34;blue&#34;</span>)
+	}
+}
+
+<span style="color:#00f">func</span> changeHueBulbsColor(lights []hue.Light, color *[2]<span style="color:#2b91af">float32</span>) {
+	<span style="color:#00f">for</span> _, light := <span style="color:#00f">range</span> lights {
+		light.SetBrightness(50)
+		light.SetColor(color)
+	}
+}</code></pre></div></p>
+
+<p>Code could be improved 🤷‍. But in a nutshell, we have 3 endpoints:- <code>/red</code>, <code>/green</code> , <code>/blue</code> , that respectively change the Hue Bulb colors to Red, Green and Blue.</p>
+
+<p>Well, that doesn’t do much, but it seemed fun. A little more tinkering coming soon. 😃</p>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'gangac';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://github.com/gangachris">gangachris</a> 2018</p>
+  </div>
+</section>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
