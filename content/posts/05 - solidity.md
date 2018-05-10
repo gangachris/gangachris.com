@@ -8,7 +8,7 @@ date: 2018-05-10T14:22:37+03:00
 categories:
   - "code"
 slug: "introduction-to-solidity"
-draft: true
+draft: false
 ---
 
 > A Blockchain is a distributed data store with append only operations, secured cryptographically. While this is just one of the definitions, you could think of it as a database, hosted in multiple nodes, which allows writing of data and viewing or querying, but never modifications. This type of structure is often referred to as _append-only_.
