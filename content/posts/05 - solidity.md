@@ -19,15 +19,13 @@ Blockchain being a distributed data store can be used to solve some common probl
 
 A common example is three partners want to do business. Once they conclude their business and transactions are made, the records will be recorded in three different ledgers, one for each business. There's a couple of duplication going on here, but it makes sense since all these partners may not want any other partner to see their ledgers as it may contain sensitive data. The solution a distributed ledger provides is a digital way for all these partners to only have one ledger, which they can trust has the necessary integrity and security measures to ensure their records are safe.
 
-TODO :: ADD IMAGE
+There are so many blockchain platforms, and [Ethereum](https://www.ethereum.org/) is one of the well known ones. Code that is written and pushed to these blockchain platforms to ensure the above described behavior is possible are called Smart Contracts.
 
-There are so many blockchain platforms, and Ethereum is one of the well known ones. Code that is written and pushed to these blockchain platforms to ensure the above described behavior is possible are called Smart Contracts.
+[Solidity](http://solidity.readthedocs.io/en/v0.4.23/) is the language used to write Smart Contracts for some common blockchain platforms, including [Ethereum](https://www.ethereum.org/), [Ethereum Classic](https://ethereumclassic.github.io/), [Qtum](https://qtum.org/en/), [Rootstock](https://www.rsk.co/), [Ubiq](https://ubiqsmart.com/). In this context, however, we will focus mainly on the Ethereum Blockchain.
 
-Solidity is the language used to write Smart Contracts for some common blockchain platforms, including Ethereum, Ethereum Classic, Qtum, Rootstock, Ubiq. In this context, however, we will focus mainly on the Ethereum Blockchain.
+An example of a use case for Solidity and Ethereum is crowdfunding. Since ether represents value in the Ethereum ecosystem, a contract can be written where users contribute ether, and the percentage they contribute towards a course is stored securely and publicly. This is what most Initial Coin Offerings do.
 
-An example of a use case for Solidity and Ethereum is crowdfunding, which we will build in the final lesson. Since ether represents value in the Ethereum ecosystem, a contract can be written where users contribute ether, and the percentage they contribute towards a course is stores securely and publicly. This is what most Initial Coin Offerings do.
-
-> An Initial Coin Offering (ICO) is a means of raising funds for a new coin(often refers to as tokens). In a nutshell, you send a mature cryptocurrency with value, you get a new token without any value with the hope that it may gain value, or just to support a course.
+> An [Initial Coin Offering (ICO)](https://www.investopedia.com/terms/i/initial-coin-offering-ico.asp) is a means of raising funds for a new coin(often refers to as tokens). In a nutshell, you send a mature cryptocurrency with value, you get a new token without any value with the hope that it may gain value, or just to support a course. But the token represents the value/share you hold for this new project.
 
 ## What we'll cover
 
@@ -46,7 +44,7 @@ Solidity as a programming language has it's own rules and specification on how i
 
 ## Language Structure
 
-Solidity is a Contract-Oriented built specifically to work in the Ethereum Virtual Machine. To explain this further, the Ethereum Blockchain Network can be thought of as a network of computers, often called nodes, and within this network there's an actual virtual machine. Hence the name Ethereum Virtual Machine.
+Solidity is a Contract-Oriented programming language built specifically to work in the Ethereum Virtual Machine. To explain this further, the Ethereum Blockchain Network can be thought of as a network of computers, often called nodes, and within this network there's an actual virtual machine that enables secure execution of contract code. Hence the name Ethereum Virtual Machine.
 
 Solidity being a Contract Oriented programming language means the highest language construct is a Contract. Here's an example.
 
@@ -56,8 +54,9 @@ Solidity being a Contract Oriented programming language means the highest langua
 pragma solidity ^0.4.20;
 
 contract MyToken {
-/_ Declare Variables Here _/
-uint data;
+
+    /_ Declare Variables Here _/
+    uint data;
 
     /* Constructor initializes the Token */
     constructor() public { }
@@ -76,7 +75,7 @@ Everything is then enclosed in a Contract called myToken.
 
 In Object Oriented Programming, a class is usually a collection of member variable and methods, where the variables represent state, while the methods are used to execute code that usually modify the state. The same concept applies to Solidity.
 
-A Contract is mainly collection of state variables and methods. In addition to these, function modifiers, events, enums and struct types can also be found inside a contract. We'll look at them in detail in the contract section. In the above example the state variable is uint data, and the methods are constructor and transfer.
+A Contract is mainly collection of state variables and methods. In addition to these, _function modifiers_, _events_, _enums_ and _struct types_ can also be found inside a contract. We'll look at them in detail in the contract section. In the above example the state variable is _uint data_, and the methods are _constructor_ and _transfer_.
 
 > A constructor is usually called when an instance is created and is therefore used to instantiate most of the state variables in a contract
 
@@ -97,8 +96,10 @@ They usually consist of a variable name and a data type, and they permanently st
 pragma solidity ^0.4.20;
 
 contract MyToken {
-address public owner; // an address type
-bool public tokenExpired; // a boolean type
+
+    address public owner; // an address type
+    bool public tokenExpired; // a boolean type
+
 }
 {{< / highlight >}}
 
@@ -111,9 +112,11 @@ Functions are used execute code within the contract. Most functions usually modi
 pragma solidity ^0.4.20;
 
 contract MyToken {
-function giveTokens(address to, uint amount) public {
-// code to give tokens goes here
-}
+
+    function giveTokens(address to, uint amount) public {
+        // code to give tokens goes here
+    }
+
 }
 {{< / highlight >}}
 
@@ -127,7 +130,8 @@ Function modifiers change the behavior of functions. They are used to put in con
 pragma solidity ^0.4.20;
 
 contract MyToken {
-address public owner;
+
+    address public owner;
 
     modifier onlyOwner() { // Modifier
         require(msg.sender == owner);
@@ -152,7 +156,8 @@ Events are specific code that records when particular actions occur inside the c
 pragma solidity ^0.4.20;
 
 contract MyToken {
-Event MintOccurred(address from, uint amount); // Event
+
+    Event MintOccurred(address from, uint amount); // Event
 
     function mint(uint amount) public {
         // mint code goes here
@@ -173,12 +178,11 @@ An example of a Contract with all the above-mentioned code is shown below
 {{< highlight solidity >}}
 pragma solidity ^0.4.20;
 
-pragma solidity ^0.4.0;
-
 contract MyToken {
-struct TokenHolder {
-bytes32 name;
-}
+
+    struct TokenHolder {
+        bytes32 name;
+    }
 
     address public owner;
 
@@ -257,14 +261,17 @@ Following are some of the common data types that are available in Solidity
 </table>
 
 ### Control Structures
-Solidity has the following control structures: *if*, *else*, *while*, *do*, *for*, *break*, *continue*, *return* and the *ternary operator*.  Here's an example.
+
+Solidity has the following control structures: _if_, _else_, _while_, _do_, _for_, _break_, _continue_, _return_ and the _ternary operator_. Here's an example.
 
 #### if else statements
+
 These are used to check that a certain condition is satisfied before a section of the code is executed. Image 1.7 below shows an if statement that checks whether the balance of a given address is greater than 0, and adds a given amount to the balance, and if not, ends the execution of the function with a return keyword.
 {{< highlight solidity >}}
 pragma solidity ^0.4.20;
 
 contract MyToken {
+
     // Declare variables here
     mapping(address => uint) public balances;
 
@@ -276,16 +283,18 @@ contract MyToken {
           return;
         }
     }
+
 }
 {{< / highlight >}}
 
 #### while, do, for, break
- Below shows examples of loop structures. Below are three variations of the same loop, all adding 1 ten times to the balance of a given address.
+
+Below shows examples of loop structures. Below are three variations of the same loop, all adding 1 ten times to the balance of a given address.
 {{< highlight solidity >}}
 pragma solidity ^0.4.20;
 
 contract MyToken {
-    /* Declare Variables Here */
+    /_ Declare Variables Here _/
     mapping(address => uint) public balances;
 
     /* addOne using a while loop */
@@ -312,6 +321,7 @@ contract MyToken {
             balances[to] = balances[to] + 1;
         }
     }
+
 }
 
 {{< / highlight >}}
@@ -323,14 +333,16 @@ The code above is strictly to show how loops are created, but this example could
 We'll end the crash course with an example/scenario.
 
 ### Example
+
 We're going to write a Smart Contract that covers most of the topics we have covered above. We will run it in the next article.
 
 #### Scenario
+
 A car exchange contract has the following requirements.
 
-- Cars have the following properties: make, year,
-- Users can add their own cars (hint: users can have more than one car)
-- Owners of a car can transfer ownership of the car to another user
-- We should be able to get a car of a user with one function, which will take in an address and a key.
+* Cars have the following properties: make, year,
+* Users can add their own cars (hint: users can have more than one car)
+* Owners of a car can transfer ownership of the car to another user
+* We should be able to get a car of a user with one function, which will take in an address and a key.
 
 Try writing the above Smart Contract. The solution can be found in [this gist](https://gist.github.com/gangachris/2337e3f526f58f1d33a9e7b074a42ad1). Leave a comment in the gist for questions.
