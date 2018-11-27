@@ -1,6 +1,6 @@
 baseurl = "https://gangachris.com"
 languageCode = "en"
-title = "NIH isn't a 4 letter word"
+title = ""
 theme = "hemingway"
 copyright = "&copy; <a href=\"https://github.com/gangachris\">gangachris</a> 2018"
 disqusShortname = "gangac"
@@ -19,24 +19,20 @@ pygmentsStyle = "vs"
 
 [[params.social]]
 url = "https://github.com/gangachris"
-fa_icon = "fa-github"
+fa_icon = "fab fa-github"
 
 [[params.social]]
 url = "https://twitter.com/gangachris_"
-fa_icon = "fa-twitter"
+fa_icon = "fab fa-twitter"
 
 [[params.social]]
 url = "https://www.linkedin.com/in/gangachris/"
-fa_icon = "fa-linkedin"
+fa_icon = "fab fa-linkedin"
+
+[[params.social]]
+url = "https://telegram.me/gangachris"
+fa_icon = "fab fa-telegram-plane"
 
 [[params.social]]
 url = "mailto:ganga.chris@gmail.com"
-fa_icon = "fa-envelope"
-
-# [[params.social]]
-# url = "https://telegram.me/gangachris"
-# fa_icon = "fa-telegram-plane"
-
-[[params.social]]
-url = "/index.xml"
-fa_icon = "fa-rss"
+fa_icon = "fas fa-at"

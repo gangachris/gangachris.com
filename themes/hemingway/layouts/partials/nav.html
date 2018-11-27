@@ -9,7 +9,7 @@
           {{ range .Site.Params.social }}
           <a class="level-item" href="{{ .url }}">
             <span class="icon">
-              <i class="fa {{ .fa_icon }}"></i>
+              <i class="{{ .fa_icon }}"></i>
             </span>
           </a>
           {{ end }}
