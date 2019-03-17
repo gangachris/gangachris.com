@@ -1,10 +1,10 @@
-baseurl = "https://gangachris.com"
+baseurl = "https://ganga.dev"
 languageCode = "en"
 title = ""
 theme = "hemingway"
 copyright = "&copy; <a href=\"https://github.com/gangachris\">gangachris</a> 2018"
 disqusShortname = "gangac"
-googleAnalytics = ""
+googleAnalytics = "UA-135762413-1"
 
 #code
 # pygmentsUseClassic=true
@@ -34,5 +34,5 @@ url = "https://telegram.me/gangachris"
 fa_icon = "fab fa-telegram-plane"
 
 [[params.social]]
-url = "mailto:ganga.chris@gmail.com"
+url = "mailto:c@ganga.dev"
 fa_icon = "fas fa-at"
