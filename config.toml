@@ -1,38 +1,50 @@
+languageCode = "en-gb"
+theme = "beautifulhugo"
+contentdir = "content"
+publishdir = "public"
+builddrafts = false
 baseurl = "https://ganga.dev"
-languageCode = "en"
-title = ""
-theme = "hemingway"
-copyright = "&copy; <a href=\"https://github.com/gangachris\">gangachris</a> 2018"
-disqusShortname = "gangac"
+title = "💻 🚴🏾‍😜"
+author = "Christopher Ganga"
+copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
 googleAnalytics = "UA-135762413-1"
-
-#code
-# pygmentsUseClassic=true
-pygmentsCodefences=true
-pygmentsStyle = "vs"
+disqusShortname = "gangac"
+pygmentsStyle = "trac"
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
 
 [params]
+    subtitle = "Probably duplicate web content"
+    logo = "images/avatar.png"
+    favicon = "images/favicon.ico"
+    dateFormat = "January 2, 2006"
+    commit = true
+    rss = true
+    socialShare = true
+    comments = true
+    readingTime = true
 
-# [params.highlight]
-# style = "github"
-# languages = ["go", "dockerfile", "html", "yaml", "typescript"]
+[Author]
+  name = "Christopher Ganga"
+  email = "chris@ganga.dev"
+  github = "gangachris"
+  twitter = "gangachris_"
+  stackoverflow = "users/2234099/ganga"
+  linkedin = "gangachris"
+  spotify = "gangachris"
 
-[[params.social]]
-url = "https://github.com/gangachris"
-fa_icon = "fab fa-github"
+[[menu.main]]
+    name = "Blog"
+    url = ""
+    weight = 1
 
-[[params.social]]
-url = "https://twitter.com/gangachris_"
-fa_icon = "fab fa-twitter"
+[[menu.main]]
+    name = "External"
+    url = "/page/external"
+    weight = 3
 
-[[params.social]]
-url = "https://www.linkedin.com/in/gangachris/"
-fa_icon = "fab fa-linkedin"
-
-[[params.social]]
-url = "https://telegram.me/gangachris"
-fa_icon = "fab fa-telegram-plane"
-
-[[params.social]]
-url = "mailto:c@ganga.dev"
-fa_icon = "fas fa-at"
+[[menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 4
