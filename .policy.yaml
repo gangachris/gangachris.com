@@ -1,11 +1,13 @@
 policy:
   approval:
-  - pr too big
+    - pr is not too big
 
   approval_rules:
-    - name: pr too big
+    - name: pr is not too big
       if:
         modified_lines:
           # additions: "> 100"
           # deletions: "> 100"
           total: "< 10"
+      requires:
+        count: 0
