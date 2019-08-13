@@ -9,20 +9,20 @@ mergeable:
             count: 5
             message: Change is very large. Should be under 350 lines of addtions and deletions.
     pass: 
-      - do: checks,
-        status: 'success'
+      - do: checks
+        status: success
         payload:
-          title: 'PR Size is within expected range'
-          summary: `PR Size is ok`
+          title: PR Size is within expected range
+          summary: PR Size is ok
     fail: # list of actions to be executed when at least one validation fails. Specify one or more. Omit this tag if no actions are needed.
-      - do: checks,
-        status: 'failure'
+      - do: checks
+        status: failure
         payload:
-          title: 'PR Size is too large'
-          summary: `PR Size is too large. Should be less than 350 lines of additions and deletions`
+          title: PR Size is too large
+          summary: PR Size is too large. Should be less than 350 lines of additions and deletions
     error: # list of actions to be executed when at least one validator throws an error. Specify one or more. Omit this tag if no actions are needed.
-      - do: checks,
-        status: 'action_required'
+      - do: checks
+        status: action_required
         payload:
-          title: 'Could not determine PR Size'
-          summary: `Something went wrong`
+          title: Could not determine PR Size
+          summary: Something went wrong
