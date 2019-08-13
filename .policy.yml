@@ -4,8 +4,6 @@ policy:
 
 approval_rules:
   - name: pr is too big
-    options:
-
     requires:
       count: 1
       organizations: ["kehindesalaam"]
