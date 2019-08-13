@@ -1,1 +1,1 @@
-_Software Engineer, from Kenya, living in Berlin. Not-A-PRO Cyclist, Sometimes I troll_
+_Software Engineer in Berlin. Ocassional Cyclist_
