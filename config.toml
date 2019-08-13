@@ -38,13 +38,3 @@ pygmentsCodefencesGuessSyntax = true
     name = "Blog"
     url = ""
     weight = 1
-
-[[menu.main]]
-    name = "External"
-    url = "/page/external"
-    weight = 3
-
-[[menu.main]]
-    name = "Tags"
-    url = "tags"
-    weight = 4
