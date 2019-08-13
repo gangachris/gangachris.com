@@ -4,11 +4,6 @@ policy:
 
   approval_rules:
     - name: pr is not too big
-      if:
-        modified_lines:
-          # additions: "> 100"
-          # deletions: "> 100"
-          total: "< 10"
       options:
         allow_contributor: true
         invalidate_on_push: true
