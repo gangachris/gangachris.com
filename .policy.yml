@@ -1,9 +1,0 @@
-policy:
-  approval:
-    - approved by kehinde
-
-approval_rules:
-  - name: approved by hellofresh
-    requires:
-      count: 1
-      organizations: ["hellofresh"]
