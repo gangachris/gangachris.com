@@ -9,5 +9,7 @@ policy:
           # additions: "> 100"
           # deletions: "> 100"
           total: "< 10"
+      options:
+        invalidate_on_push: true
       requires:
         count: 0
