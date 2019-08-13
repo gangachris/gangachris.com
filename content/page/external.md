@@ -35,6 +35,3 @@ This is page contains articles I initially wrote a while back on other platforms
 18. [Build a mobile app with Angular 2 and Ionic 2](https://scotch.io/tutorials/build-a-mobile-app-with-angular-2-and-ionic-2)
 19. [Get Laravel Route Parameters in middleware ](https://scotch.io/tutorials/get-laravel-route-parameters-in-middleware)
 20. [Debugging Javascript With Chrome Dev Tools](https://scotch.io/tutorials/debugging-javascript-with-chrome-devtools-breakpoints)
-
-
-sdad
