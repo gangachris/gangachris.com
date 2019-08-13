@@ -1,0 +1,10 @@
+version: 2
+mergeable:
+  - when: pull_request.opened
+    validate:
+      - do: size
+        ignore: ['*.mod', '*.sum']
+        lines:
+          max:
+            count: 5
+            message: Change is very large. Should be under 350 lines of addtions and deletions.
