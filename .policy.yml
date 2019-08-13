@@ -1,9 +1,9 @@
 policy:
   approval:
-    - pr is too big
+    - approved by kehinde
 
 approval_rules:
-  - name: pr is too big
+  - name: approved by hellofresh
     requires:
       count: 1
-      organizations: ["kehindesalaam"]
+      organizations: ["hellofresh"]
