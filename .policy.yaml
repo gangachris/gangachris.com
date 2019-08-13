@@ -1,11 +1,11 @@
 policy:
   approval:
-    - pr is not too big
+    - pr is too big
 
-  approval_rules:
-    - name: pr is not too big
-      options:
-        allow_contributor: true
-        invalidate_on_push: true
-      requires:
-        count: 1
+approval_rules:
+  - name: pr is too big
+    options:
+      
+    requires:
+      count: 1
+      organizations: ["gangachris"]
