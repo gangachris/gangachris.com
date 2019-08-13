@@ -10,6 +10,7 @@ policy:
           # deletions: "> 100"
           total: "< 10"
       options:
+        allow_contributor: true
         invalidate_on_push: true
       requires:
-        count: 0
+        count: 1
