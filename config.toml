@@ -4,7 +4,7 @@ contentdir = "content"
 publishdir = "public"
 builddrafts = false
 baseurl = "https://ganga.dev"
-title = ""
+title = "💻 🚴🏾‍"
 author = "Christopher Ganga"
 copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
 googleAnalytics = "UA-135762413-1"
@@ -38,3 +38,13 @@ pygmentsCodefencesGuessSyntax = true
     name = "Blog"
     url = ""
     weight = 1
+
+[[menu.main]]
+    name = "External"
+    url = "/page/external"
+    weight = 3
+
+[[menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 4

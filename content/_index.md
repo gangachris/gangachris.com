@@ -1,1 +1,1 @@
-_Software Engineer in Berlin. Ocassional Cyclist_
+_Software Engineer in Berlin. Occasional Cyclist_
