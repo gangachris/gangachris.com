@@ -4,7 +4,6 @@ contentdir = "content"
 publishdir = "public"
 builddrafts = false
 baseurl = "https://ganga.dev"
-title = "💻 🚴🏾‍"
 author = "Christopher Ganga"
 copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
 googleAnalytics = "UA-135762413-1"
@@ -15,7 +14,6 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 
 [params]
-    subtitle = "Probably duplicate web content"
     logo = "images/avatar.png"
     favicon = "images/favicon.ico"
     dateFormat = "January 2, 2006"
@@ -29,9 +27,8 @@ pygmentsCodefencesGuessSyntax = true
   name = "Christopher Ganga"
   email = "c@ganga.dev"
   github = "gangachris"
-  twitter = "gangachris_"
+  twitter = "gngchrs"
   stackoverflow = "users/2234099/ganga"
-  linkedin = "gangachris"
   spotify = "gangachris"
 
 [[menu.main]]

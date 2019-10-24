@@ -1,1 +1,1 @@
-_Software Developer. Occasional Cyclist_
+_Programmer, Occasional Cyclist_
