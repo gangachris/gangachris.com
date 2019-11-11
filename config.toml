@@ -14,8 +14,6 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 
 [params]
-    logo = "images/avatar.png"
-    favicon = "images/favicon.ico"
     dateFormat = "January 2, 2006"
     commit = true
     rss = true
@@ -26,7 +24,7 @@ pygmentsCodefencesGuessSyntax = true
 [Author]
   name = "Christopher Ganga"
   email = "c@ganga.dev"
-  github = "gangachris"
+  github = "gngchrs"
   twitter = "gngchrs"
   stackoverflow = "users/2234099/ganga"
   spotify = "gangachris"
@@ -35,11 +33,6 @@ pygmentsCodefencesGuessSyntax = true
     name = "Blog"
     url = ""
     weight = 1
-
-[[menu.main]]
-    name = "External"
-    url = "/page/external"
-    weight = 3
 
 [[menu.main]]
     name = "Tags"
