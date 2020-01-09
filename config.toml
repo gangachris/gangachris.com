@@ -25,9 +25,7 @@ pygmentsCodefencesGuessSyntax = true
   name = "Christopher Ganga"
   email = "c@ganga.dev"
   github = "gngchrs"
-  twitter = "gngchrs"
   stackoverflow = "users/2234099/ganga"
-  spotify = "gangachris"
 
 [[menu.main]]
     name = "Blog"
